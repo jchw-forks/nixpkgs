@@ -219,6 +219,26 @@ in {
           '';
         };
 
+        path = mkOption {
+          type = types.str;
+          example = literalExpression ''
+            "/run/matrix-synapse/synapse.socket"
+          '';
+          description = lib.mdDoc ''
+            Path to domain socket to listen on.
+          '';
+        };
+
+        mode = mkOption {
+          type = types.str;
+          example = literalExpression ''
+            "600"
+          '';
+          description = lib.mdDoc ''
+            File mode to set for domain socket path.
+          '';
+        };
+
         type = mkOption {
           type = types.enum [
             "http"
