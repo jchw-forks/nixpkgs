@@ -9204,28 +9204,9 @@ with pkgs;
 
   flint3 = callPackage ../development/libraries/flint/3.nix { };
 
-  fltk13 = callPackage ../development/libraries/fltk {
+  fltk = callPackage ../development/libraries/fltk/1.4.nix {
     inherit (darwin.apple_sdk.frameworks) ApplicationServices Carbon Cocoa OpenGL;
   };
-  fltk14 = callPackage ../development/libraries/fltk/1.4.nix {
-    inherit (darwin.apple_sdk.frameworks) ApplicationServices Carbon Cocoa OpenGL;
-  };
-  fltk13-minimal = fltk13.override {
-    withGL = false;
-    withCairo = false;
-    withPango = false;
-    withExamples = false;
-    withDocs = false;
-  };
-  fltk14-minimal = fltk14.override {
-    withGL = false;
-    withCairo = false;
-    withPango = false;
-    withExamples = false;
-    withDocs = false;
-  };
-  fltk = fltk13;
-  fltk-minimal = fltk13-minimal;
 
   inherit (callPackages ../development/libraries/fmt { }) fmt_8 fmt_9 fmt_10 fmt_11;
 
@@ -15684,9 +15665,7 @@ with pkgs;
     inherit (__splicedPackages.libsForQt5) qtbase qtwebengine wrapQtAppsHook qtwayland;
   };
 
-  rakarrack = callPackage ../applications/audio/rakarrack {
-    fltk = fltk13;
-  };
+  rakarrack = callPackage ../applications/audio/rakarrack { };
 
   radiotray-ng = callPackage ../applications/audio/radiotray-ng {
     wxGTK = wxGTK32;
@@ -16277,9 +16256,7 @@ with pkgs;
     extensionPack = virtualboxExtpack;
   });
 
-  virtualglLib = callPackage ../tools/X11/virtualgl/lib.nix {
-    fltk = fltk13;
-  };
+  virtualglLib = callPackage ../tools/X11/virtualgl/lib.nix { };
 
   virtualgl = callPackage ../tools/X11/virtualgl {
     virtualglLib_i686 = if stdenv.hostPlatform.system == "x86_64-linux"
@@ -17050,9 +17027,7 @@ with pkgs;
     inherit (darwin.apple_sdk.frameworks) Cocoa;
   };
 
-  fltrator = callPackage ../games/fltrator {
-    fltk = fltk-minimal;
-  };
+  fltrator = callPackage ../games/fltrator { };
 
   factorio = callPackage ../by-name/fa/factorio/package.nix { releaseType = "alpha"; };
 
@@ -19239,9 +19214,7 @@ with pkgs;
 
   animdl = python3Packages.callPackage ../applications/video/animdl { };
 
-  dillo = callPackage ../by-name/di/dillo/package.nix {
-    fltk = fltk13;
-  };
+  dillo = callPackage ../by-name/di/dillo/package.nix { };
 
   cantata = callPackage ../by-name/ca/cantata/package.nix {
     ffmpeg = ffmpeg_6;

@@ -1,7 +1,7 @@
 { lib, stdenv, fetchurl, wrapQtAppsHook
 , libglut, freealut, libGLU, libGL, libICE, libjpeg, openal, openscenegraph, plib
 , libSM, libunwind, libX11, xorgproto, libXext, libXi
-, libXmu, libXt, simgear, zlib, boost, cmake, libpng, udev, fltk13, apr
+, libXmu, libXt, simgear, zlib, boost, cmake, libpng, udev, fltk, apr
 , makeDesktopItem, qtbase, qtdeclarative, glew, curl
 }:
 
@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     libglut freealut libGLU libGL libICE libjpeg openal openscenegraph plib
     libSM libunwind libX11 xorgproto libXext libXi
-    libXmu libXt simgear zlib boost libpng udev fltk13 apr qtbase
+    libXmu libXt simgear zlib boost libpng udev fltk apr qtbase
     glew qtdeclarative curl
   ];
 

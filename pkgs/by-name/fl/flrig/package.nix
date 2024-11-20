@@ -1,7 +1,7 @@
 { lib
 , stdenv
 , fetchurl
-, fltk13
+, fltk
 , libjpeg
 , eudev
 , pkg-config
@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    fltk13
+    fltk
     libjpeg
     eudev
   ];

@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, fltk13, ghostscript }:
+{ lib, stdenv, fetchurl, fltk, ghostscript }:
 
 stdenv.mkDerivation rec {
   pname = "flpsed";
@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     sha256 = "0vngqxanykicabhfdznisv82k5ypkxwg0s93ms9ribvhpm8vf2xp";
   };
 
-  buildInputs = [ fltk13 ];
+  buildInputs = [ fltk ];
 
   postPatch = ''
     # replace the execvp call to ghostscript

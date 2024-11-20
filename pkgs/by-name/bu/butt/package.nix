@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, pkg-config, fltk13, portaudio, lame, libvorbis, libogg
+{ lib, stdenv, fetchurl, pkg-config, fltk, portaudio, lame, libvorbis, libogg
 , flac, libopus, libsamplerate, fdk_aac, dbus, openssl, curl, portmidi }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -19,7 +19,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [ pkg-config ];
 
   buildInputs = [
-    fltk13
+    fltk
     portaudio
     lame
     libvorbis

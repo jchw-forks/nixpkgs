@@ -1,7 +1,7 @@
 { lib
 , stdenv
 , fetchurl
-, fltk13
+, fltk
 , libjpeg
 , pkg-config
 }:
@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    fltk13
+    fltk
     libjpeg
   ];
 
